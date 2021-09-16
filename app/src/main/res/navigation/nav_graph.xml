@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/onlineFragment"
-        android:name="com.app.koltinpoc.OnlineFragment"
+        android:name="com.app.koltinpoc.view.fragments.OnlineFragment"
         android:label="fragment_online"
         tools:layout="@layout/fragment_online" />
     <fragment
         android:id="@+id/offLineFragment"
-        android:name="com.app.koltinpoc.OffLineFragment"
+        android:name="com.app.koltinpoc.view.fragments.OffLineFragment"
         android:label="fragment_offline"
         tools:layout="@layout/fragment_offline" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.app.koltinpoc.HomeFragment"
+        android:name="com.app.koltinpoc.view.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
