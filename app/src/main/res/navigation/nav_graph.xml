@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/onlineFragment"
+        android:name="com.app.koltinpoc.OnlineFragment"
+        android:label="fragment_online"
+        tools:layout="@layout/fragment_online" />
+    <fragment
+        android:id="@+id/offLineFragment"
+        android:name="com.app.koltinpoc.OffLineFragment"
+        android:label="fragment_offline"
+        tools:layout="@layout/fragment_offline" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.koltinpoc.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_onlineFragment"
+            app:destination="@id/onlineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_offLineFragment"
+            app:destination="@id/offLineFragment" />
+    </fragment>
+</navigation>
