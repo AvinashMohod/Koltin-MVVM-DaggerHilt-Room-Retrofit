@@ -2,6 +2,7 @@ package com.app.koltinpoc.di
 
 import android.app.Application
 import com.app.koltinpoc.api.TopHeadlinesApi
+import com.app.koltinpoc.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,19 +18,16 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun providesRetrofit():Retrofit
-    {
-        return Retrofit.Builder().
-        baseUrl("https://newsapi.org/").
-        addConverterFactory(GsonConverterFactory.create())
-       .build()
+    fun providesRetrofit(): Retrofit {
+        return Retrofit.Builder().baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 
     @Provides
-    fun providesTopHeadlinesApi(retrofit: Retrofit):TopHeadlinesApi{
+    fun providesTopHeadlinesApi(retrofit: Retrofit): TopHeadlinesApi {
         return retrofit.create(TopHeadlinesApi::class.java)
     }
-
 
 
 }
