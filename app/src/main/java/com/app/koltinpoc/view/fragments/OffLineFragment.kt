@@ -15,9 +15,7 @@ class OffLineFragment : Fragment(R.layout.fragment_online) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding= FragmentOfflineBinding.bind(view)
-
     }
 
 }

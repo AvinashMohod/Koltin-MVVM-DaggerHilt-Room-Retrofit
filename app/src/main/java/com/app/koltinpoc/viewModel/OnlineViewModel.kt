@@ -26,7 +26,6 @@ class OnlineViewModel @Inject constructor(private val networkRepository: Network
             val response = networkRepository.getTopHeadlines(COUNTRY_CODE, API_KEY)
             _topHeadlines.postValue(handleResponse(response))
         }
-
     }
 
     private fun handleResponse(response: Response<NewResponse>): DataHandler<NewResponse> {

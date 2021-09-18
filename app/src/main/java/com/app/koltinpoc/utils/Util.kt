@@ -1,6 +1,8 @@
 package com.app.koltinpoc.utils
 
+import android.util.Log
 import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.app.koltinpoc.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -15,4 +17,8 @@ fun ImageView.loadImageFromGlide(url: String) {
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .into(this)
 
+}
+
+fun Fragment.Logs(message:String){
+    Log.d(this.javaClass.canonicalName, "Log -->: "+ message)
 }

@@ -9,7 +9,11 @@
         android:id="@+id/onlineFragment"
         android:name="com.app.koltinpoc.view.fragments.OnlineFragment"
         android:label="fragment_online"
-        tools:layout="@layout/fragment_online" />
+        tools:layout="@layout/fragment_online" >
+        <action
+            android:id="@+id/action_onlineFragment_to_articleDetailsFragment"
+            app:destination="@id/articleDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/offLineFragment"
         android:name="com.app.koltinpoc.view.fragments.OffLineFragment"
@@ -26,5 +30,15 @@
         <action
             android:id="@+id/action_homeFragment_to_offLineFragment"
             app:destination="@id/offLineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailsFragment"
+        android:name="com.app.koltinpoc.view.fragments.ArticleDetailsFragment"
+        android:label="fragment_article_details"
+        tools:layout="@layout/fragment_article_details" >
+        <argument
+            android:name="article_data"
+            app:argType="com.app.koltinpoc.model.Article"
+            app:nullable="true" />
     </fragment>
 </navigation>

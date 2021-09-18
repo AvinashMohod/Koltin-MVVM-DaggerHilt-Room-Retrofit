@@ -1,17 +1,20 @@
-package com.app.koltinpoc.model
+package com.app.koltinpoc.db.entity
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 
-@Parcelize
-data class Article(
+@Entity(tableName = "ARTICLE")
+data class ArticleEntity(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val author: String,
     val content: String,
     val description: String,
     val publishedAt: String,
-    val source: Source,
+    val source: SourceEntity,
     val title: String,
     val url: String,
     val urlToImage: String
-):Parcelable
+)

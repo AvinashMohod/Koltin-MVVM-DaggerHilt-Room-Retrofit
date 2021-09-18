@@ -1,10 +1,11 @@
-package com.app.koltinpoc.model
+package com.app.koltinpoc.db.entity
 
 import android.os.Parcelable
+import androidx.room.Entity
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class Source(
+
+data class SourceEntity(
     val id: String,
     val name: String
-):Parcelable
+)

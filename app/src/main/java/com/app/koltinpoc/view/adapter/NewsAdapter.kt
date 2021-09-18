@@ -46,9 +46,21 @@ class NewsAdapter @Inject constructor() : RecyclerView.Adapter<NewsAdapter.ViewH
 
         }
 
+        holder.itemView.setOnClickListener {
+            setArticleClickListener?.let {
+                it(article)
+            }
+        }
+
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
+    }
+
+    private var setArticleClickListener : ((article: Article)->Unit)? =null
+
+    fun onArticleClicked(listener:(Article)->Unit){
+        setArticleClickListener =listener
     }
 }
