@@ -1,7 +1,6 @@
 package com.app.koltinpoc.view.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.koltinpoc.R
 import com.app.koltinpoc.databinding.FragmentOnlineBinding
 import com.app.koltinpoc.utils.DataHandler
-import com.app.koltinpoc.utils.Logs
+import com.app.koltinpoc.utils.LogData
 import com.app.koltinpoc.view.adapter.NewsAdapter
 import com.app.koltinpoc.viewModel.OnlineViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,11 +38,11 @@ class OnlineFragment : Fragment(R.layout.fragment_online) {
                 }
                 is DataHandler.ERROR -> {
                     binding.progressBar.visibility = View.GONE
-                    Logs("onViewCreated: ERROR " + dataHandler.message)
+                    LogData("onViewCreated: ERROR " + dataHandler.message)
                 }
                 is DataHandler.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    Logs("onViewCreated: LOADING..")
+                    LogData("onViewCreated: LOADING..")
 
                 }
             }

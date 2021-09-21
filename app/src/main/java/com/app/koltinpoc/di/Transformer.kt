@@ -41,13 +41,22 @@ object Transformer {
         )
     }
 
-    private fun convertSourceModelToSourceEntity(source: Source): SourceEntity {
+    private fun convertSourceModelToSourceEntity(source: Source?): SourceEntity? {
 
-        return SourceEntity(source.id, source.name)
+        source?.let {
+            return SourceEntity(source.id, source.name)
+        }
+
+        return null
     }
 
-    private fun convertSourceEntityToSourceModel(sourceEntity: SourceEntity): Source {
+    private fun convertSourceEntityToSourceModel(sourceEntity: SourceEntity?): Source? {
 
-        return Source(sourceEntity.id, sourceEntity.name)
+        sourceEntity?.let {
+
+            return Source(sourceEntity.id, sourceEntity.name)
+        }
+
+        return null
     }
 }

@@ -10,6 +10,7 @@ interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(articleEntity: ArticleEntity):Long
 
+    // NOTE - Since we are already using LIVE-DATA no need to use suspend function
     @Query("SELECT * FROM ARTICLE")
     fun getAllOfflineArticles():LiveData<List<ArticleEntity>>
 

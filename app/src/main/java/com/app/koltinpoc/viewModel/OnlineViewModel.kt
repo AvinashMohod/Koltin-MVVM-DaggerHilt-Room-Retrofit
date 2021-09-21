@@ -15,7 +15,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class OnlineViewModel @Inject constructor(private val networkRepository: NetworkRepository) : ViewModel() {
+ class OnlineViewModel @Inject constructor(private val networkRepository: NetworkRepository) : ViewModel() {
 
     private val _topHeadlines = MutableLiveData<DataHandler<NewResponse>>()
     val topHeadlines: LiveData<DataHandler<NewResponse>> = _topHeadlines
